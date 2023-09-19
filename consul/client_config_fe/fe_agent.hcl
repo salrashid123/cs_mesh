@@ -1,0 +1,36 @@
+data_dir = "data_agent_fe/"
+log_level = "INFO"
+node_name = "node-1"
+server = false,
+encrypt = "EYWAIfW4DqcblgN1PLQhZWF82mHekspKkgqIBU0ef40=",
+
+retry_join = ["10.128.0.2"]
+
+#bind_addr = "{{ GetInterfaceIP \"ens4\" }}"
+bind_addr = "0.0.0.0"
+advertise_addr = "10.128.0.41"
+
+ui_config  {
+  enabled = false,
+},
+
+auto_encrypt {
+  tls = true
+},
+tls {
+  defaults {
+    ca_file = "/consul/consul-agent-ca.pem",
+    verify_incoming = true,
+    verify_outgoing = true    
+  },
+}
+
+acl {
+  enabled = true
+  default_policy = "deny"
+  enable_token_persistence = true
+  tokens {
+    agent  = "991a4761-c0ad-3314-c822-89900d53f84c"
+  }
+}
+

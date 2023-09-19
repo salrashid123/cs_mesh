@@ -1,0 +1,17 @@
+{
+  "service": {
+    "name": "fe",
+    "id": "fe-1",
+    "port": 18081,
+    "token": "9befa2c2-a8ba-e145-f628-aa678a625cdc",
+    "check": {
+      "http": "http://localhost:18081/healthz",
+      "method": "GET",
+      "interval": "1s",
+      "timeout": "1s"
+    }
+  }
+}
+
+
+  
